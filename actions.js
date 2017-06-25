@@ -4,30 +4,20 @@ const EDIT_COMMENT = 'EDIT_COMMENT';
 const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
 const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
 //THUMB_UP_COMMENT/THUMB_DOWN_COMMENT
-function counter(state = 0, action) {
-    switch(action.type) {
-        case 'THUMB_UP_COMMENT':
-            return state + 1
-        case 'THUMB_DOWN_COMMENT':
-            return state - 1
-        default:
-            return state;
+
+function thumbsUp(id) {
+    return {
+        type: THUMB_UP_COMMENT,
+        id
     }
 }
 
-const thumbsUp = (id) => {
-  return {
-    type: 'THUMB_UP_COMMENT',
-    id
-  };
-};
-
-const thumbsDown = (id) => {
-  return {
-    type: 'THUMB_DOWN_COMMENT',
-    id
-  };
-};
+function thumbsDown(id) {
+    return {
+        type: THUMB_DOWN_COMMENT,
+        id
+    }
+}
 
 function removeComment(id) {
     return {
@@ -35,7 +25,6 @@ function removeComment(id) {
         id
     }
 }
-
 
 //create comment
 function createComment(id, author, comment) {
