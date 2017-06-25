@@ -19,13 +19,6 @@ function thumbsDown(id) {
     }
 }
 
-function removeComment(id) {
-    return {
-        type: REMOVE_COMENT,
-        id
-    }
-}
-
 //create comment
 function createComment(id, author, comment) {
     return {
