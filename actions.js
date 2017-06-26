@@ -1,8 +1,8 @@
-const CREATE_COMMENT = 'CREATE_COMMENT';
-const REMOVE_COMENT = 'REMOVE_COMENT';
-const EDIT_COMMENT = 'EDIT_COMMENT';
-const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
-const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const REMOVE_COMENT = 'REMOVE_COMENT';
+export const EDIT_COMMENT = 'EDIT_COMMENT';
+export const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
+export const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
 //THUMB_UP_COMMENT/THUMB_DOWN_COMMENT
 
 function thumbsUp(id) {
@@ -20,9 +20,9 @@ function thumbsDown(id) {
 }
 
 //create comment
-function createComment(id, author, comment) {
+function addComment(id, author, comment) {
     return {
-        type: CREATE_COMMENT,
+        type: ADD_COMMENT,
         id: uuid.v4()
         author,
         comment
