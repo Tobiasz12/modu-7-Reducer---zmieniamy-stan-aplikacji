@@ -28,8 +28,8 @@ import {THUMB_DOWN_COMMENT} from './actions'
                     if (comment.id !== action.id) {
                         return comment;
                     }
-                }
-            });
+                })
+            })
         case EDIT_COMMENT:
             return Object.assign({},state,{
                 comments: state.comments.filter(comment => {
