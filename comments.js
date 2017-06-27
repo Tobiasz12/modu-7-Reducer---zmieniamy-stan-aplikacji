@@ -41,6 +41,7 @@ import {THUMB_DOWN_COMMENT} from './actions'
                 })
             });
         default:
+            return state;
     }
 }
 
