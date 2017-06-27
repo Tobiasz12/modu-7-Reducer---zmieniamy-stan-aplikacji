@@ -23,23 +23,13 @@ import {THUMB_DOWN_COMMENT} from './actions'
                 return comment;
             })
         case REMOVE_COMMENT:
-            return Object.assign({},state,{
-                comments: state.comments.filter(comment => {
-                    if (comment.id !== action.id) {
-                        return comment;
-                    }
-                })
-            })
+            return state.filter(comment => comment.id !== action.id);
+
         case EDIT_COMMENT:
-            return Object.assign({},state,{
-                comments: state.comments.filter(comment => {
-                if (comment.id !== action.id) {
-                    return comment;
-                }
-                return object.assign({}, comment, {
-                    text: action.text
-                })
-            });
+            return state.map(comment=> {
+                comment.id === action.id ? comment.text = action.text : comment
+                return comment;
+            })
         default:
             return state;
     }
